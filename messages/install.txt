@@ -1,6 +1,33 @@
-SublimeLinter-contrib-__linter__
+SublimeLinter-contrib-generic
 -------------------------------
-This linter plugin for SublimeLinter provides an interface to __linter__.
+This linter plugin for SublimeLinter provides an interface to a generic linter.
+
+Example:
+
+```
+  "generic": {
+    "disable": false,
+    "name": "spectral",
+    "args": ["lint", "--ruleset", "~/.config/.spectral.yaml"],
+    "executable": "spectral",
+    "selector": "source.yaml",
+    "regexp": "\\s*(?P<line>\\d+):(?P<col>\\d+)\\s+(?P<error_type>[warning|error]+)\\s+(?P<message>.+)"
+  },
+```
+
+Use the regexp to match:
+
+- line
+- col
+- error
+- warning
+- message
+- near
+- filename
+- error_type
+- code
+- end_line
+- end_col
 
 For more information, please see:
-https://github.com/__user__/SublimeLinter-contrib-__linter__
+https://github.com/icnagy/SublimeLinter-contrib-generic

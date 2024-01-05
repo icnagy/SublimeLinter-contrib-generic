@@ -12,7 +12,7 @@ class Generic(Linter):
     }
 
     def split_match(self, match):
-        self.name = self.settings.get('name') or attrs.get('name') or cls_name.lower()
+        self.name = self.settings.get('name') or attrs.get('name') or cls_name.lower() # this will duplicate annotations
         error = super().split_match(match)
         rematch = re.compile(self.settings.get('regexp')).match(error['message'])
         if type(rematch).__name__ == 'NoneType':
